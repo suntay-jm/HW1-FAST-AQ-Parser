@@ -48,7 +48,7 @@ def test_FastaParser():
     with pytest.raises(ValueError):
         records = list(bad_parser) # forces parser to process file and convert all records into a list --> triggers error (no seqs)
 
-    good_parser = FastaParser("../data/test.fa") # going back one directory and into the data directory
+    good_parser = FastaParser("data/test.fa") # going back one directory and into the data directory
     records = list(good_parser) # __iter__ method of FastaParser reads file and gets all the records one by one and puts them in a list
 
     """
@@ -79,7 +79,7 @@ def test_FastqParser():
     an instance of your FastqParser class and assert that it properly reads 
     in the example Fastq File.
     """
-    good_fastq = FastqParser("../data/test.fq") 
+    good_fastq = FastqParser("data/test.fq") 
     records = list(good_fastq)
     """
     records would look like:
@@ -104,6 +104,6 @@ def test_FastqFormat():
     Test to make sure fastq file is being read in. If this is a fasta file, the
     first line is None
     """
-    bad_fastq = FastqParser("../data/test.fa")
+    bad_fastq = FastqParser("data/test.fa")
     records = list(bad_fastq)
     assert records[0] is not None, "first item isn't None"
