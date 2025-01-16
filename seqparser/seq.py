@@ -12,7 +12,7 @@ def transcribe(dna_string):
         transcribed += TRANSCRIPTION_MAPPING[nt]
     return transcribed
 
-def reverse_transcribe(seq: str) -> str:
+def reverse_transcribe(dna_string):
     """
     Write a function that will transcribe an input sequence and reverse
     the sequence
