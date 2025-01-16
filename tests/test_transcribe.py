@@ -37,3 +37,4 @@ def test_reverse_transcribe():
     assert reverse_transcribe("GATTACA") == "UGUAAUC"
     assert reverse_transcribe("GCTA") == "UAGC"
     assert reverse_transcribe("ATCG") == "CGAU"
+
