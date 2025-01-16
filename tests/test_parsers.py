@@ -36,7 +36,7 @@ def test_FastaParser():
     files that are blank or corrupted in some way. Two example Fasta files are
     provided in /tests/bad.fa and /tests/empty.fa
     """
-    bad_parser = FastaParser("./bad.fa") # making an instance of the FastaParser class using bad.fa
+    bad_parser = FastaParser("tests/bad.fa") # making an instance of the FastaParser class using bad.fa
 
     # bad.fa has no sequences which will raise a ValueError
     # using pytest.raises to check for expected errors -- passes if expected error gets raised, fails if it doesn't 
@@ -68,7 +68,7 @@ def test_FastaFormat():
     Test to make sure that a fasta file is being read in if a fastq file is
     read, the first item is None
     """
-    check_fasta = FastaParser("../data/test.fq")
+    check_fasta = FastaParser("data/test.fq")
     records = list(check_fasta) # converting to list to check first element
 
     assert records[0] is not None, "first item isn't None"
